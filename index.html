@@ -156,6 +156,35 @@
         .whatsapp-float:hover {
             transform: scale(1.1);
         }
+
+        /* 5. MOBILE REVIEW CARD FIX */
+        @media (max-width: 767px) {
+            .review-ticker-container {
+                -webkit-mask-image: none;
+                mask-image: none;
+                overflow-x: auto; /* Enable horizontal scroll */
+                padding: 0 1rem; /* Add padding so cards don't touch edges */
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+            .review-ticker {
+                animation: none; /* Disable animation */
+                width: auto; /* Reset width */
+                display: flex; /* This is already set */
+                flex-wrap: nowrap; /* Ensure it's a single line */
+            }
+            .review-card-apex {
+                width: 90%; /* Make cards almost full width */
+                max-width: 320px; /* But not *too* wide */
+                flex-shrink: 0;
+                scroll-snap-align: start;
+                margin-right: 1rem; /* Keep existing margin */
+            }
+            /* Hide the duplicated cards (5, 6, 7, 8) on mobile */
+            .review-ticker > .flex > .review-card-apex:nth-child(n+5) {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -304,7 +333,7 @@
                 </form>
 
                 <div id="result-box" class="mt-12 p-8 border-4 border-gray-200 rounded-2xl text-center hidden">
-                    <p id="result-message" class="text-2xl font-semibold mb-4 text-primary-dark"></p>
+                    <p id="result-message" class="text-2xl font-semibold mb-4 text-primary-dark" tabindex="-1"></p>
                     <p class="text-xl text-gray-500 mb-2">Estimated Health Index:</p>
                     <p id="health-estimate" class="text-5xl font-extrabold text-primary-dark mb-6"></p>
                     <a href="#lead-form" id="result-cta" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-lg font-bold rounded-full text-white transition duration-300 hover:scale-[1.02] shadow-lg"></a>
@@ -495,14 +524,16 @@
                     </a>
                 </div>
                 <div class="order-1 md:order-2 bg-gray-200 rounded-xl shadow-2xl overflow-hidden">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=First+Battery+Centre,93+Voortrekker+Road,Alberton,Gauteng" width="100%"
-                        height="400"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.683815614464!2d28.12046317541756!3d-26.27192337703497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e951bf317cfb98d%3A0x33408b268a9458a6!2sAlberton%20Battery%20Mart!5e0!3m2!1sen!2sza!4v1761681253450!5m2!1sen!2sza" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade"
-                        title="Google Map showing Alberton Battery Mart location at 28 St Columb Road"> </iframe>
+                        title="Google Map showing Alberton Battery Mart location">
+                    </iframe>
                      </div>
                 </div>
         </div>
@@ -652,7 +683,7 @@
                 <p class="mt-4 text-gray-300"><span class="font-bold text-white">Mon-Fri:</span> 08:00 - 17:00</p>
                 <p class="text-gray-300"><span class="font-bold text-white">Sat:</span> 08:00 - 13:00</p>
                 <p class="text-gray-300"><span class="font-bold text-white">Sun:</span> Closed</p>
-                 <a href="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=First+Battery+Centre,93+Voortrekker+Road,Alberton,Gauteng" target="_blank" class="text-accent-red hover:text-white underline mt-3 inline-block font-medium" title="Get directions to Alberton Battery Mart at 28 St Columb Road">
+                 <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.997...YOUR_SPECIFIC_MAP_PARAMETERS...66!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e...YOUR_PLACE_ID...!2sAlberton%20Battery%20Mart!5e0!3m2!1sen!2sza!4v1...TIMESTAMP0" target="_blank" class="text-accent-red hover:text-white underline mt-3 inline-block font-medium" title="Get directions to Alberton Battery Mart at 28 St Columb Road">
                     Get Directions
                 </a>
             </div>
@@ -666,7 +697,7 @@
                     </li>
                     <li>
                         <span class="text-gray-400 text-sm">WhatsApp / Mobile:</span>
-                        <a href="https://wa.me/27823046926" target="_blank" class="block text-xl font-bold hover:text-white transition">082 304 6926</a>
+                        <a href="httpsfs://wa.me/27823046926" target="_blank" class="block text-xl font-bold hover:text-white transition">082 304 6926</a>
                     </li>
                     <li>
                         <span class="text-gray-400 text-sm">Email Us:</span>
@@ -767,6 +798,10 @@
 
             resultBox.classList.remove('hidden');
             resultBox.classList.add('visible');
+
+            // *** FIX ***: Set focus to the result message without scrolling the page.
+            document.getElementById('result-message').focus({ preventScroll: true });
+
             buttonText.textContent = "CALCULATE AGAIN";
         }
 
