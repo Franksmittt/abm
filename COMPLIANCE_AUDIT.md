@@ -154,10 +154,12 @@ Ads: “Free Callout” / “we come to you” / “pay only on success”.
 | Live `/services/mobile-battery-replacement/alberton` | `Within 10km of New Redruth the callout is free with battery purchase. For outer Alberton suburbs a small R150 travel fee may apply—confirmed during booking.` |
 | Live `/` | `Pay on Success` / `Secure mobile payments are processed only after the battery is coded and your engine successfully starts.` |
 
-If ads still say blanket “Free Callout”, that is a reportable mismatch with the live FAQ. “Pay on success” is fine if it is true; disclose that the battery is still payable on a successful start, and that a callout fee may apply outside 10 km.
+If ads still say blanket “Free Callout”, that is a reportable mismatch. “Pay on success” is fine if it is true; disclose that the battery is still payable on a successful start, and that a **callout fee applies** when we come to you.
+
+**Corrected policy (owner, September 2026):** mobile callouts are **not** free within 10 km. A callout fee applies when we come to you, confirmed before dispatch. Walk-ins at 28 St Columb Rd, New Redruth have no callout charge; testing and fitment remain free with battery purchase.
 
 **Recommended single policy (publish identically on ads, homepage FAQ, service page, schema):**  
-`In-store testing and fitment are free with battery purchase. Mobile callout is free within 10 km of 28 St Columb Rd when you buy the battery from us. Outside that radius a R150 travel fee is confirmed before dispatch. You pay after the engine starts.`
+`Walk in at 28 St Columb Rd, New Redruth: testing and fitment are free with battery purchase — no callout charge in the shop. If we come to you, a callout fee applies and is confirmed before dispatch. You pay after the engine starts.`
 
 ### C8. Homepage reviews look internally “Verified” (CPA s41; ARB 4.1)
 
@@ -316,7 +318,7 @@ Confirmed-compliant or already in good shape. Do not “soften” these.
 | Same-day / fitted while you wait / no appointment | **Supported** for walk-ins during hours. | Keep. Mobile still needs a call. |
 | Mobile replacement / we come to you | **Supported.** | Land on `/services/mobile-battery-replacement/alberton`. |
 | 60-minute average response | **Inconsistent windows; no log published.** | `Typical 45–60 min in Alberton during trading hours` or publish a 90-day average. |
-| Pay only on success | **Supported** on homepage step 3. | Keep; disclose callout fee outside 10 km. |
+| Pay only on success | **Supported** on homepage step 3. | Keep; disclose that a callout fee applies when we come to you. |
 | 646/652/658/668/AGM/EFB in stock | **Supported** on size hubs **if stock is real.** | Refresh P.O.A. Exide lines; don’t mark unavailable SKUs in stock. |
 | Address / Mon–Sat hours | Address yes. Sat close **12:00** on production, **13:00** here. | One hours set everywhere including GBP. |
 
@@ -328,7 +330,7 @@ Confirmed-compliant or already in good shape. Do not “soften” these.
 
 - Independent battery **shop / specialists** naming; no “certified/official stockist”.
 - Stockists of Willard, Exide, Enertec, Power Plus, Eco Plus and Raylite, with visible from-prices for the ad brands.
-- Callout / testing / fitment conditions aligned to the live 10 km / R150 rule.
+- Callout / testing / fitment: walk-in New Redruth has no callout charge; mobile callouts have a fee confirmed before dispatch.
 - Hours Sat 08:00–12:00; schema, email, VAT, warranty and disclosure hygiene.
 - Location merit kept: New Redruth vs Voortrekker Rd, mobile from 28 St Columb Rd.
 
